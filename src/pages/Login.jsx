@@ -3,27 +3,35 @@ import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
+import toast from 'react-hot-toast';
 
   export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-  
+    
+
     const handleLogin = async (e) => {
       e.preventDefault();
-  
+
+      
+    
       try {
-        // Simulação de autenticação (substitua por uma requisição real no futuro)
-        const response = await api.post('/login', { email, password });
-        console.log('Login bem-sucedido:', response.data);
-  
+        console.log('E-mail digitado:', email); 
+        console.log('Senha digitada:', password);
+    
+        const response = await api.post('/api/auth/login', { email, password });
+        console.log('Resposta do backend:', response.data);
+        localStorage.setItem('token', response.data.token);
         // Redireciona para a tela da árvore genealógica
-        navigate('/');
+        navigate('/home');
+        toast.success('Login bem-sucedido!');
       } catch (error) {
         console.error('Erro no login:', error);
-        alert('Erro no login. Verifique suas credenciais.');
+        toast.error('Erro no login. Verifique suas credenciais.');
       }
     };
+  
   
     return (
       <div className="flex justify-center items-center h-screen bg-gray-100">
