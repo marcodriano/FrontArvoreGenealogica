@@ -34,38 +34,41 @@ import toast from 'react-hot-toast';
   
   
     return (
-      <div className="flex justify-center items-center h-screen bg-gray-100">
-        <div className="bg-white p-8 rounded shadow-md">
-          <h1 className="text-2xl font-bold mb-4">Login</h1>
+      <div className="flex justify-center items-center h-screen bg-green-100 text-center ">
+        <div className="bg-green-300 p-8 rounded shadow-md border-1 bg-conic-120 bg-left bg-no-repeat bg-[url(/tree.svg)]">
+          <div>
+          
+          <h1 className=" text-2xl font-bold mb-4">
+            Login</h1>
+          </div>
+
           <form onSubmit={handleLogin}>
             <input
               type="email"
-              placeholder="Email"
+              placeholder="Usuário"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-2 mb-4 border rounded"
+              className="w-full p-2 mb-4 border rounded bg-green-100"
             />
             <input
               type="password"
               placeholder="Senha"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-2 mb-4 border rounded"
+              className="w-full p-2 mb-4 border rounded bg-green-100"
             />
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+              className="border-1 w-full bg-blue-500 p-2 rounded hover:bg-blue-600"
             >
               Entrar
             </button>
           </form>
-          <p className="mt-4 text-center">
-            Não tem uma conta?{' '}
-            <span className="text-blue-500 hover:underline">Crie uma aqui</span>
-          </p>
-          <p className="mt-4 text-center">
-          Não tem uma conta? <Link to="/" className="text-blue-500 hover:underline">Voltar para Home</Link></p>
+          
         </div>
       </div>
     );
   }
+
+  /*<p className="mt-4 text-center">
+          Não tem uma conta? <Link to="/" className="text-blue-500 hover:underline">Voltar para Home</Link></p>*/
