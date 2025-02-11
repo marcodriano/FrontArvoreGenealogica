@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Home from './pages/Home';
 import Login from './pages/Login';
 import ProtectedRoute from './components/PrivateRoute';
-import './app.css'
+import './index.css'
 
 function App() {
   return (
