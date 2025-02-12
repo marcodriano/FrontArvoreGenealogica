@@ -221,18 +221,23 @@ export default function Home() {
             <label className="block text-gray-700 font-semibold mb-2">
               Relação
             </label>
-            <input
-              {...register("relationship", {
-                required: "A relação é obrigatória",
-              })}
-              placeholder="Relação (ex: pai, mãe, filho)"
+            <select
+              {...register("relationship")}
               className="w-full p-2 border rounded"
-            />
-            {errors.relationship && (
-              <p className="text-red-500 text-sm mt-1">
-                {errors.relationship.message}
-              </p>
-            )}
+            >
+              <option value="pai">Pai</option>
+              <option value="mãe">Mãe</option>
+              <option value="irmã">Irmã</option>
+              <option value="irmão">Irmão</option>
+              <option value="avó">Avó</option>
+              <option value="avô">Avô</option>
+              <option value="tio">Tio</option>
+              <option value="tia">Tia</option>
+              <option value="primo">Primo</option>
+              <option value="prima">Prima</option>
+              <option value="sobrinho">Sobrinho</option>
+              <option value="neto">Neto</option>
+            </select>
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 font-semibold mb-2">
