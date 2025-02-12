@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://backarvoregenealogica.onrender.com', // URL do backend
+  baseURL: 'http://localhost:5000', // URL do backend
 });
 
 // Adiciona o token ao cabeçalho das requisições
